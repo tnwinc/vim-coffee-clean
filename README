@@ -1,0 +1,3 @@
+CoffeeClean cleans up and reformats your .coffee files on save.
+
+It really just runs a slew of regex transformations... It's a bit cheap, but works well enough.
