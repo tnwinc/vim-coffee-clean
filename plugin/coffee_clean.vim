@@ -1,13 +1,6 @@
-" Language:    CoffeeScript
 " Maintainer:  Brendan Erwin <brendanjerwin@gmail.com>
 " URL:         http://github.com/tnwinc/vim-coffee-clean
 " License:     MIT
-
-if exists("b:did_ftplugin")
-  finish
-endif
-
-let b:did_ftplugin = 1
 
 function! CoffeeClean()
     let save_cursor = getpos(".")
