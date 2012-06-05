@@ -20,7 +20,8 @@ function! CoffeeClean()
 
     "Extra spaces
     silent! %s/\v\s+\=\s+/ = /g
-    silent! %s/\v\s,/,/g
+    silent! %s/\v(\S)\s+,/\1,/g
+    silent! %s/\(\w\) ,/\1,/g
 
 
     "use single quotes for 'normal' strings, leave double quotes for
@@ -29,7 +30,8 @@ function! CoffeeClean()
     silent! %s/""/''/g
 
     "remove extra spaces around braces
-    silent! %s/ ]/]/g
+    silent! %s/\v(\S)\s+\]/\1]/g
+    silent! %s/\(\w\) ]/\1]/g
     silent! %s/\[ /[/g
     silent! %s/( /(/g
     silent! %s/\v(\S)\s+\)/\1)/g
