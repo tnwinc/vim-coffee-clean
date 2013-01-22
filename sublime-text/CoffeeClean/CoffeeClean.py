@@ -5,8 +5,6 @@ class CoffeeCleanCommand(sublime_plugin.EventListener):
 
     def on_pre_save(self, view):
         if len(view.file_name()) > 0 and view.file_name().endswith((".coffee")):
-            print('cleaning coffee')
-
             edit = view.begin_edit()
 
             replacements = [
@@ -19,7 +17,7 @@ class CoffeeCleanCommand(sublime_plugin.EventListener):
                 ['=\(', '= ('],
                 ['=\'', '= \''],
                 ['="', '= "'],
-                ['(?<!=)(?<!!)(?<!~)(?<!?)(?<!|)(?<=\S)=', ' ='],
+                ['(?<=[a-zA-Z0-9\'"])=', ' ='],
 
                 # extra spaces
                 ['[ \t]+=[ \t]+', ' = '],
